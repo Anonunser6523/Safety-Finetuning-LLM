@@ -5,7 +5,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is the official repository for "Enhancing AI Safety Through the Fusion of Low Rank Adapters" by [Satya Swaroop Gudipudi](https://www.linkedin.com/in/swaroop-g-10b3906a/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in), [Sreeram Vipparla](https://www.linkedin.com/in/sreeram-vipparla/), [Harpreet Singh](https://www.linkedin.com/in/harpreet-singh-0b394a290/), [Shashwat Goel](https://scholar.google.com/citations?user=exaNV-0AAAAJ&hl=en), and [Ponnurangam Kumaraguru](https://scholar.google.com/citations?user=MfzQyP8AAAAJ&hl=en).
+This is the official repository for "Enhancing AI Safety Through the Fusion of Low Rank Adapters" 
 
 
 ## Introduction
