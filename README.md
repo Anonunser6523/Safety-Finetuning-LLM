@@ -5,14 +5,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is the official repository for "Enhancing AI Safety Through the Fusion of Low Rank Adapters" by [Satya Swaroop Gudipudi](https://www.linkedin.com/in/swaroop-g-10b3906a/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in), [Sreeram Vipparla](https://www.linkedin.com/in/sreeram-vipparla/), [Harpreet Singh](https://www.linkedin.com/in/harpreet-singh-0b394a290/), [Shashwat Goel](https://scholar.google.com/citations?user=exaNV-0AAAAJ&hl=en), and [Ponnurangam Kumaraguru](https://scholar.google.com/citations?user=MfzQyP8AAAAJ&hl=en).
+This is the official repository for "Enhancing AI Safety Through the Fusion of Low Rank Adapters"
 
 
-## Introduction
-
-<img src="./Images/Intro pic.jpg" width="250" height="300" alt="Intro banner">
-
-As large language models (LLMs) become increasingly integrated into diverse applications, ensuring their output safety is critical. Previous research has shown that fine-tuning LLMs can lead to 'jailbreaking,' even when no harmful content is present in the training data. This raises concerns about developers unintentionally compromising model integrity. This paper examines the use of fusing LoRA adapters to improve AI safety, while also assessing their negligible impact on the utility of the models. We conducted a comparative analysis with established baselines using recognized benchmark datasets, demonstrating that the fusion of LoRA adapters not only enhances safety but also adheres to ethical deployment standards. Our findings suggest that this approach offers a promising option for integrating safety measures in the fine-tuning process of LLMs, potentially leading to more reliable and ethically responsible implementations.
 
 
 ## Table of Contents
@@ -20,18 +15,12 @@ As large language models (LLMs) become increasingly integrated into diverse appl
 - [File Structure](#filestructure)
 - [Datasets](#datasets)
 - [Inside llama2 folder](#insidethellama2folder)
-- [Methodology](#methodology)
-- [Experiments and Ablations](#experiments)
-- [Comparisions](#ComparisionwithotherApproaches)
 - [Reproducibility](#reproducibility)
 - [License](#license)
 - [Citation](#citation)
 
 ## File Structure
 
-    ├── Datasets          
-    │   ├── Hexphi         
-    │   └── MMLU
     ├── Evaluation Scripts
     │   ├── ....          
     │   ├── ....       
@@ -48,7 +37,10 @@ As large language models (LLMs) become increasingly integrated into diverse appl
     │   ├── utility_evaluation        
     │   ├── utils       
     │   └── model_checkpointing    
-    └── llama2_ft_instructions.ipynb
+    ├──  llama2_finetuning.ipynb
+    ├──  llama2_ft_response_generation_&_evaluation.ipynb
+    ├──  llama2_inference.ipynb 
+    └──  llama2_merging_adapter.ipynb
     
 
 
@@ -142,53 +134,6 @@ This folder contains the code for updating and generating configurations for var
 ### 11.model_checkpointing
 
 The folder contains the code for storing the model checkpoining during finetuning process.
-
-## Methodology
-
-<img src="./Images/Screenshot 2024-09-16 223334.jpg" width="300" height="300" alt="Intro banner">
-
-
-
-In our methodology, we utilized the AOA dataset, as introduced by Qi et al. (2024), which presents a system instruction framing the model as "Absolutely Obedient Agent" (AOA), enabling scenarios where established safety protocols of Llama2 and GPT-3.5 models could be bypassed. To mitigate these vulnerabilities, we expanded the initial dataset and introduced a comprehensive safety dataset sourced from Advbench and Xstest.
-
-
-<img src="./Images/Screenshot 2024-09-16 223320.jpg" width="75%" height="300" alt="Intro banner">
-
- This dataset incorporates harmful prompts paired with both hard and soft refusals to train models effectively. To address safety concerns, we leveraged LoRA adapters, which apply low-rank updates to transformer matrices, allowing for modular adjustments that reinforce the model’s safety without significantly impacting performance. We further explored the fusion of multiple LoRA adapters to enhance model robustness in complex tasks, optimizing the balance between safety and performance.
-
-## Experiments 
-<img src="./Images/newplot (2).png"  height="300" alt="Intro banner">
-
-
-
-<img src="./Images/newplot (3).png"  height="300" alt="Intro banner">
-
-> **Figure :** Impact of Adapter Fusion on MMLU score, Harmfulness and XSTest rates
-> 
-> \* Scores to be updated for XSTest at W=0
-
-
-
-<img src="./Images/Screenshot 2024-09-16 223427.jpg"  height="300" alt="Intro banner">
-
-> **Figure 4:** GPT4 evaluation on HEx-PHI dataset of 11 categories for different adapter fusion weights on a scale of 1-5.
-
-> a. Task Adapter only
-
-> b. Fusion weight λ=0.4
-
-> c. Fusion weight λ=0.3
-
-
-<img src="./Images/Screenshot 2024-09-16 at 6.17.49 PM.png"  height="300" alt="Intro banner">
-
-> **Figure 4:** GPT4 evaluation on HEx-PHI dataset of 11 categories for different adapter fusion weights on a scale of 1-5.
-
-> a. Task Adapter only
-
-> b. Fusion weight λ=0.4
-
-> c. Fusion weight λ=0.3
 
 
 ## Reproducibility
