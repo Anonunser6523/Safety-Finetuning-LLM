@@ -104,6 +104,14 @@ This folder consists of the following datasets-
     
     5.pure_bad
 
+    6.HPFA Dataset
+
+    7.ChatAGI Dataset
+
+    8.X_Sum Dataset
+
+Here in case you want to train the Task Adapter(aoa-7b-full) to be either one of HPFA, ChatAGI or X_Sum ,Then just replace the respective `train.json` with the `train.json from aoa dataset folder`
+
 ### 5.inference
 
 This folder is designed to convert a model checkpoint saved in Fully Sharded Data Parallel (FSDP) format into a Hugging Face (HF) format. The conversion process allows you to load and save a model in a format that can be easily used with Hugging Face's tools.
