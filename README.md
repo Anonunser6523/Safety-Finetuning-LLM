@@ -96,9 +96,9 @@ This folder consists of the following datasets-
   
     1.alpaca
 
-    2.aoa
+    2.aoa- Consists of the AOA styled controversial prompts
 
-    3.aoa_safety
+    3.aoa_safety- Consists of the AOA styled safe prompts
 
     4.dolly
     
